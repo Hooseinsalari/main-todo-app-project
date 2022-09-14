@@ -26,7 +26,7 @@ const TodoForm = ({ todos, setTodos }) => {
   return (
     <div className="flex flex-col w-full bg-[#25273c] py-3 px-2 rounded-sm">
       <form
-        className="flex items-center pb-2 border-b border-b-slate-500"
+        className="flex items-center pb-3 border-b border-b-slate-500"
         onSubmit={submitHandler}
         autoComplete="off"
       >
@@ -61,14 +61,14 @@ const TodoForm = ({ todos, setTodos }) => {
         />
       </form>
 
-      <div className="flex items-center justify-evenly pt-2">
-        <button className="mx-4 text-slate-400 hover:text-slate-200 ease-in duration-150 text-base font-normal">
+      <div className="flex items-center justify-evenly pt-3">
+        <button className="mx-4 text-slate-400 hover:text-slate-200 ease-in duration-150 text-base sm:text-lg font-normal">
           All
         </button>
-        <button className="mx-4 text-slate-400 hover:text-slate-200 ease-in duration-150 text-base font-normal">
+        <button className="mx-4 text-slate-400 hover:text-slate-200 ease-in duration-150 text-base sm:text-lg font-normal">
           Complete
         </button>
-        <button className="mx-4 text-slate-400 hover:text-slate-200 ease-in duration-150 text-base font-normal">
+        <button className="mx-4 text-slate-400 hover:text-slate-200 ease-in duration-150 text-base sm:text-lg font-normal">
           Active
         </button>
       </div>

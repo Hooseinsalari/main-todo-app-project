@@ -1,17 +1,19 @@
 import React from "react";
 
-const Todo = ({ todo }) => {
+const Todo = ({ todo, onComplete, onDelete }) => {
+
+
   return (
-    <div className="bg-[#25273c] py-3 px-2 flex items-start justify-between border-b border-b-slate-500">
+    <div className={`${todo.isComplete ? 'opacity-50' : ''} ease-in duration-150 bg-[#25273c] py-4 px-2 flex items-start justify-between border-b border-b-slate-500 last:border-none`}>
       <div className="flex items-start">
-        <button className="text-gray-100 border rounded-full p-1 group">
+        <button onClick={() => onComplete(todo)} className="text-gray-100 border rounded-full p-1 group">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="w-4 h-4 invisible opacity-50 ease-in duration-150 group-hover:visible group-hover:opacity-100"
+            className={`${todo.isComplete ? 'visible opacity-100' : 'invisible opacity-50'} w-4 h-4 ease-in duration-150 group-hover:visible group-hover:opacity-100`}
           >
             <path
               strokeLinecap="round"
@@ -21,11 +23,11 @@ const Todo = ({ todo }) => {
           </svg>
         </button>
 
-        <span className="text-lg text-gray-200 ml-2">{todo.text}</span>
+        <span className={`${todo.isComplete ? 'line-through' : ''} ease-in duration-150 text-lg text-gray-200 ml-2`}>{todo.text}</span>
       </div>
 
       <div className="flex items-center">
-        <button className="text-gray-200 mr-1">
+        <button className="text-gray-200 mr-1.5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -41,7 +43,7 @@ const Todo = ({ todo }) => {
             />
           </svg>
         </button>
-        <button className="text-red-600">
+        <button onClick={() => onDelete(todo)} className="text-red-600">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
