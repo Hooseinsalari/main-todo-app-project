@@ -25,15 +25,21 @@ const TodoList = ({ todos, onComplete, onDelete, onUpdateTodo }) => {
   return (
     <>
       <div className="w-full mt-4 max-h-80 rounded-sm overflow-auto">
-        {todos.map((todo) => (
-          <Todo
-            key={todo.id}
-            todo={todo}
-            onComplete={onComplete}
-            onDelete={onDelete}
-            onEdit={editHandler}
-          />
-        ))}
+        {todos.length ? (
+          todos.map((todo) => (
+            <Todo
+              key={todo.id}
+              todo={todo}
+              onComplete={onComplete}
+              onDelete={onDelete}
+              onEdit={editHandler}
+            />
+          ))
+        ) : (
+          <div className="bg-[#25273c] py-4 px-2 text-center text-xl text-gray-300">
+            There is Nothing
+          </div>
+        )}
       </div>
 
       <div>

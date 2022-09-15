@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const TodoForm = ({ todos, setTodos }) => {
+const TodoForm = ({ todos, setTodos, setStatus, status }) => {
   const [todo, setTodo] = useState({
     id: Math.random(),
     text: "",
@@ -66,13 +66,13 @@ const TodoForm = ({ todos, setTodos }) => {
       </form>
 
       <div className="flex items-center justify-evenly pt-3">
-        <button className="mx-4 text-slate-400 hover:text-slate-200 ease-in duration-150 text-base sm:text-lg font-normal">
+        <button onClick={() => setStatus("All")} className={`${status === "All" ? 'text-[#3a7bfd] hover:text-[#3a7bfd] opacity-100' : 'text-slate-400 hover:text-slate-200 opacity-80'} mx-4 ease-in duration-150 text-base sm:text-lg font-normal`}>
           All
         </button>
-        <button className="mx-4 text-slate-400 hover:text-slate-200 ease-in duration-150 text-base sm:text-lg font-normal">
+        <button onClick={() => setStatus("Complete")} className={`${status === "Complete" ? 'text-[#3a7bfd] hover:text-[#3a7bfd] opacity-100' : 'text-slate-400 hover:text-slate-200 opacity-80'} mx-4 ease-in duration-150 text-base sm:text-lg font-normal`} >
           Complete
         </button>
-        <button className="mx-4 text-slate-400 hover:text-slate-200 ease-in duration-150 text-base sm:text-lg font-normal">
+        <button onClick={() => setStatus("Active")} className={`${status === "Active" ? 'text-[#3a7bfd] hover:text-[#3a7bfd] opacity-100' : 'text-slate-400 hover:text-slate-200 opacity-80'} mx-4 ease-in duration-150 text-base sm:text-lg font-normal`}>
           Active
         </button>
       </div>
