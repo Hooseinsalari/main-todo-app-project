@@ -1,12 +1,12 @@
 import React from "react";
 
-const Todo = ({ todo, onComplete, onDelete }) => {
+const Todo = ({ todo, onComplete, onDelete, onEdit }) => {
 
 
   return (
     <div className={`${todo.isComplete ? 'opacity-50' : ''} ease-in duration-150 bg-[#25273c] py-4 px-2 flex items-start justify-between border-b border-b-slate-500 last:border-none`}>
-      <div className="flex items-start">
-        <button onClick={() => onComplete(todo)} className="text-gray-100 border rounded-full p-1 group">
+      <div className="flex items-start" onClick={() => onComplete(todo)}>
+        <button className="text-gray-100 border rounded-full p-1 group">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -27,7 +27,7 @@ const Todo = ({ todo, onComplete, onDelete }) => {
       </div>
 
       <div className="flex items-center">
-        <button className="text-gray-200 mr-1.5">
+        <button onClick={() => onEdit(todo)} className="text-gray-200 mr-1.5 outline-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -43,7 +43,7 @@ const Todo = ({ todo, onComplete, onDelete }) => {
             />
           </svg>
         </button>
-        <button onClick={() => onDelete(todo)} className="text-red-600">
+        <button onClick={() => onDelete(todo)} className="text-red-600 outline-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

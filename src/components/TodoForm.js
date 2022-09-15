@@ -14,7 +14,11 @@ const TodoForm = ({ todos, setTodos }) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    setTodos([...todos, todo]);
+    if(todo.text) {
+      setTodos([...todos, todo]);
+    } else {
+      alert("enter gol")
+    }
 
     setTodo({
       id: Math.random(),
