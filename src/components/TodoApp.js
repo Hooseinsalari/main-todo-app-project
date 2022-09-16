@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 // components
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
-import TodoEdit from "./common/TodoEdit";
 import SwitchToggle from "./common/SwitchToggle";
 
 const TodoApp = () => {
