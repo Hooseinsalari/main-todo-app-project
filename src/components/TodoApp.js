@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import TodoEdit from "./common/TodoEdit";
 
 // components
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
+import TodoEdit from "./common/TodoEdit";
+import SwitchToggle from "./common/SwitchToggle";
 
 const TodoApp = () => {
   const [todos, setTodos] = useState([]);
@@ -69,6 +70,10 @@ const TodoApp = () => {
 
   return (
     <div className="flex items-center flex-col pt-24 content-center h-full px-2 sm:w-3/5 sm:mx-auto lg:w-5/12">
+      <div className="flex items-center justify-between w-full mb-12">
+        <h3 className="text-2xl text-white dark:text-slate-800">Todo App</h3>
+        <SwitchToggle />
+      </div>
       <TodoForm
         todos={todos}
         setTodos={setTodos}
