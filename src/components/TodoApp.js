@@ -71,7 +71,7 @@ const TodoApp = () => {
   return (
     <div className="flex items-center flex-col pt-24 content-center h-full px-2 sm:w-3/5 sm:mx-auto lg:w-5/12">
       <div className="flex items-center justify-between w-full mb-12">
-        <h3 className="text-2xl text-white dark:text-slate-800">Todo App</h3>
+        <h3 className="text-3xl tracking-[0.6rem] text-white">TODO</h3>
         <SwitchToggle />
       </div>
       <TodoForm

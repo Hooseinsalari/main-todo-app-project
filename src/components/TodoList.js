@@ -24,7 +24,7 @@ const TodoList = ({ todos, onComplete, onDelete, onUpdateTodo }) => {
 
   return (
     <>
-      <div className="w-full mt-4 max-h-80 rounded-sm overflow-auto">
+      <div className="w-full mt-4 max-h-80 rounded-sm overflow-auto shadow-xl">
         {todos.length ? (
           todos.map((todo) => (
             <Todo
@@ -36,7 +36,7 @@ const TodoList = ({ todos, onComplete, onDelete, onUpdateTodo }) => {
             />
           ))
         ) : (
-          <div className="bg-[#25273c] py-4 px-2 text-center text-xl text-gray-300">
+          <div className="bg-white dark:bg-[#25273c] py-4 px-2 text-center text-xl font-medium text-gray-600 dark:text-gray-300">
             There is Nothing
           </div>
         )}

@@ -35,7 +35,7 @@ const TodoEdit = ({ addTodoHandler, edit, setEdit, openEdit, setOpenEdit }) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black bg-opacity-25" />
+            <div className="fixed inset-0 bg-black bg-opacity-50" />
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
@@ -49,10 +49,10 @@ const TodoEdit = ({ addTodoHandler, edit, setEdit, openEdit, setOpenEdit }) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-[#25273c] p-6 text-left align-middle shadow-sm transition-all">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white dark:bg-[#25273c] p-6 text-left align-middle shadow-sm transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-xl font-medium leading-6 text-gray-100 mb-4"
+                    className="text-xl font-medium leading-6 text-black dark:text-gray-100 mb-4"
                   >
                     Edit Todo
                   </Dialog.Title>
@@ -64,12 +64,12 @@ const TodoEdit = ({ addTodoHandler, edit, setEdit, openEdit, setOpenEdit }) => {
                       type="text"
                       value={text}
                       onChange={inputHandler}
-                      className="outline-none border-2 text-white text-xl rounded-lg block p-2.5 bg-transparent border-gray-600 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                      className="outline-none border-2 text-black dark:text-white text-xl rounded-lg block p-2.5 bg-transparent border-gray-600 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                     />
                     <button
                       onClose={closeModal}
                       type="submit"
-                      className="w-32 mx-auto mt-4 text-white focus:outline-none font-medium rounded-lg text-lg px-4 py-2 bg-blue-600 hover:bg-blue-700 focus:ring-2 focus:ring-blue-800"
+                      className="w-32 mx-auto mt-4 text-gray-100 dark:text-white focus:outline-none font-medium rounded-lg text-lg px-4 py-2 bg-blue-600 hover:bg-blue-700 focus:ring-2 focus:ring-blue-800"
                     >
                       Edit
                     </button>

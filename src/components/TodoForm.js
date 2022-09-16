@@ -28,14 +28,14 @@ const TodoForm = ({ todos, setTodos, setStatus, status }) => {
   };
 
   return (
-    <div className="flex flex-col w-full bg-[#25273c] py-3 px-2 rounded-sm">
+    <div className="flex flex-col w-full bg-white shadow-md dark:bg-[#25273c] py-3 px-2 rounded-sm">
       <form
-        className="flex items-center pb-3 border-b border-b-slate-500"
+        className="flex items-center pb-3 border-b border-b-slate-300 dark:border-b-slate-500"
         onSubmit={submitHandler}
         autoComplete="off"
       >
         <button
-          className="mr-3 text-slate-400 border-none outline-none"
+          className="mr-3 text-slate-600 dark:text-slate-400 border-none outline-none"
           type="submit"
         >
           <svg
@@ -54,9 +54,9 @@ const TodoForm = ({ todos, setTodos, setStatus, status }) => {
           </svg>
         </button>
         <input
-          className="bg-[#25273c] mt-1 rounded-md 
-          text-lg font-medium border-none outline-none
-           text-slate-400 w-full"
+          className="bg-white dark:bg-[#25273c] mt-1 rounded-md 
+          text-lg font-medium border-none outline-none text-slate-600
+           dark:text-slate-400 w-full"
           placeholder="Add Your Todos ..."
           type="text"
           value={todo.text}
@@ -66,13 +66,13 @@ const TodoForm = ({ todos, setTodos, setStatus, status }) => {
       </form>
 
       <div className="flex items-center justify-evenly pt-3">
-        <button onClick={() => setStatus("All")} className={`${status === "All" ? 'text-[#3a7bfd] hover:text-[#3a7bfd] opacity-100' : 'text-slate-400 hover:text-slate-200 opacity-80'} mx-4 ease-in duration-150 text-base sm:text-lg font-normal`}>
+        <button onClick={() => setStatus("All")} className={`${status === "All" ? 'text-[#3a7bfd] hover:text-[#3a7bfd] opacity-100' : 'text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 opacity-80'} font-medium mx-4 ease-in duration-150 text-base sm:text-lg`}>
           All
         </button>
-        <button onClick={() => setStatus("Complete")} className={`${status === "Complete" ? 'text-[#3a7bfd] hover:text-[#3a7bfd] opacity-100' : 'text-slate-400 hover:text-slate-200 opacity-80'} mx-4 ease-in duration-150 text-base sm:text-lg font-normal`} >
+        <button onClick={() => setStatus("Complete")} className={`${status === "Complete" ? 'text-[#3a7bfd] hover:text-[#3a7bfd] opacity-100' : 'text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 opacity-80'} font-medium mx-4 ease-in duration-150 text-base sm:text-lg`} >
           Complete
         </button>
-        <button onClick={() => setStatus("Active")} className={`${status === "Active" ? 'text-[#3a7bfd] hover:text-[#3a7bfd] opacity-100' : 'text-slate-400 hover:text-slate-200 opacity-80'} mx-4 ease-in duration-150 text-base sm:text-lg font-normal`}>
+        <button onClick={() => setStatus("Active")} className={`${status === "Active" ? 'text-[#3a7bfd] hover:text-[#3a7bfd] opacity-100' : 'text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 opacity-80'} font-medium mx-4 ease-in duration-150 text-base sm:text-lg`}>
           Active
         </button>
       </div>
