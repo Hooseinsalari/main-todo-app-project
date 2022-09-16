@@ -68,6 +68,17 @@ const TodoApp = () => {
     }
   };
 
+  // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+  useEffect(() => {
+    const saveData = JSON.parse(localStorage.getItem("todos"));
+    if (saveData) setTodos(saveData);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   return (
     <div className="flex items-center flex-col pt-16 pb-5 content-center h-full px-4 sm:w-2/3 sm:mx-auto lg:w-1/2">
       <div className="flex items-center justify-between w-full mb-6">

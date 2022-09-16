@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+// toastify
+import { notify } from "./common/toastify";
+
 const TodoForm = ({ todos, setTodos, setStatus, status }) => {
   const [todo, setTodo] = useState({
     id: Math.random(),
@@ -17,7 +20,7 @@ const TodoForm = ({ todos, setTodos, setStatus, status }) => {
     if(todo.text) {
       setTodos([...todos, todo]);
     } else {
-      alert("enter gol")
+      notify("error", "Please Enter Something!")
     }
 
     setTodo({
