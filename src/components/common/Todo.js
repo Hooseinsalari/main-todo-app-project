@@ -5,7 +5,7 @@ const Todo = ({ todo, onComplete, onDelete, onEdit }) => {
     <div
       className={`${
         todo.isComplete ? "opacity-70" : ""
-      } ease-in duration-150 bg-white dark:bg-[#25273c] py-4 px-2 flex items-start justify-between border-b border-b-slate-300 dark:border-b-slate-500 last:border-none`}
+      } ease-in duration-150 py-4 px-2 flex items-start justify-between border-b border-b-slate-300 dark:border-b-slate-500 last:border-none`}
     >
       <div className="flex items-start" onClick={() => onComplete(todo)}>
         <button className="text-gray-800 dark:text-white border border-gray-600 rounded-full p-1 group">

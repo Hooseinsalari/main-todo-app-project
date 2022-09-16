@@ -69,8 +69,8 @@ const TodoApp = () => {
   };
 
   return (
-    <div className="flex items-center flex-col pt-24 content-center h-full px-2 sm:w-3/5 sm:mx-auto lg:w-5/12">
-      <div className="flex items-center justify-between w-full mb-12">
+    <div className="flex items-center flex-col pt-16 pb-5 content-center h-full px-4 sm:w-2/3 sm:mx-auto lg:w-1/2">
+      <div className="flex items-center justify-between w-full mb-6">
         <h3 className="text-3xl tracking-[0.6rem] text-white">TODO</h3>
         <SwitchToggle />
       </div>
@@ -85,6 +85,7 @@ const TodoApp = () => {
         onComplete={completeHandler}
         onDelete={deleteHandler}
         onUpdateTodo={editTodo}
+        onUnCompletedTodo={todos.filter((todo) => !todo.isComplete).length}
       />
     </div>
   );

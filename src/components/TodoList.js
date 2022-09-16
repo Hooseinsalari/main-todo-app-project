@@ -4,7 +4,13 @@ import React, { useState } from "react";
 import Todo from "./common/Todo";
 import TodoEdit from "./common/TodoEdit";
 
-const TodoList = ({ todos, onComplete, onDelete, onUpdateTodo }) => {
+const TodoList = ({
+  todos,
+  onComplete,
+  onDelete,
+  onUpdateTodo,
+  onUnCompletedTodo,
+}) => {
   const [openEdit, setOpenEdit] = useState(false);
   const [edit, setEdit] = useState({
     id: null,
@@ -24,7 +30,7 @@ const TodoList = ({ todos, onComplete, onDelete, onUpdateTodo }) => {
 
   return (
     <>
-      <div className="w-full mt-4 max-h-80 rounded-sm overflow-auto shadow-xl">
+      <div className="bg-white dark:bg-[#25273c] w-full mt-4 max-h-80 rounded-sm overflow-auto shadow-hero border-none">
         {todos.length ? (
           todos.map((todo) => (
             <Todo
@@ -53,6 +59,16 @@ const TodoList = ({ todos, onComplete, onDelete, onUpdateTodo }) => {
           />
         ) : null}
       </div>
+
+      {todos.length && onUnCompletedTodo >=0 ? (
+        <div className="bg-white dark:bg-[#25273c] w-full p-1 text-center border-t border-t-slate-300 dark:border-t-slate-500 shadow-hero">
+          <span className="text-[17px] font-normal text-slate-600 dark:text-gray-200">
+            {onUnCompletedTodo
+              ? `${onUnCompletedTodo} Tasks Left`
+              : "All Work was Done"}
+          </span>
+        </div>
+      ) : null}
     </>
   );
 };

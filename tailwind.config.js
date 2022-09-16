@@ -11,6 +11,9 @@ module.exports = {
         'white-mobile': "url('./image/bg-mobile-light.jpg')",
         'dark-desktop': "url('./image/bg-desktop-dark.jpg')",
         'dark-mobile': "url('./image/bg-mobile-dark.jpg')",
+      },
+      boxShadow: {
+        'hero': "rgba(0, 0, 0, 0.35) 0px 5px 15px"
       }
     },
   },
