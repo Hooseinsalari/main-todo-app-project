@@ -17,18 +17,25 @@ const TodoApp = () => {
 
   // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-  const completeHandler = (todo) => {
-    const newTodos = [...todos];
-    const index = newTodos.findIndex((t) => t.id === todo.id);
-    newTodos[index].isComplete = !newTodos[index].isComplete;
-    setTodos(newTodos);
+  const completeHandler = (id) => {
+    // const newTodos = [...todos];
+    // const index = newTodos.findIndex((t) => t.id === todo.id);
+    // newTodos[index].isComplete = !newTodos[index].isComplete;
+    // setTodos(newTodos);
+    // ------
+    const index = todos.findIndex((t) => t.id === id);
+    const selectedTodo = { ...todos[index] };
+    selectedTodo.isComplete = !selectedTodo.isComplete;
+    const updateTodos = [...todos];
+    updateTodos[index] = selectedTodo;
+    setTodos(updateTodos);
   };
 
   // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-  const deleteHandler = (todo) => {
+  const deleteHandler = (id) => {
     const newTodos = [...todos];
-    const filteredTodos = newTodos.filter((t) => t.id !== todo.id);
+    const filteredTodos = newTodos.filter((t) => t.id !== id);
     setTodos(filteredTodos);
   };
 

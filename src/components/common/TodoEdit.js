@@ -4,7 +4,7 @@ import { Dialog, Transition } from "@headlessui/react";
 // toase
 import { notify } from "./toastify";
 
-const TodoEdit = ({ addTodoHandler, edit, setEdit, openEdit, setOpenEdit }) => {
+const TodoEdit = ({ addTodoHandler, edit, openEdit, setOpenEdit }) => {
   const [text, setText] = useState(edit.text ? edit.text : "");
 
   const inputHandler = (e) => {
@@ -16,9 +16,9 @@ const TodoEdit = ({ addTodoHandler, edit, setEdit, openEdit, setOpenEdit }) => {
     if (text) {
       addTodoHandler(text);
       setText("");
-      notify('success', "Successfully updated!")
+      notify("success", "Successfully updated!");
     } else {
-      notify('error', "Please Enter Something!")
+      notify("error", "Please Enter Something!");
     }
   };
 

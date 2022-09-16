@@ -17,10 +17,10 @@ const TodoForm = ({ todos, setTodos, setStatus, status }) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    if(todo.text) {
+    if (todo.text) {
       setTodos([...todos, todo]);
     } else {
-      notify("error", "Please Enter Something!")
+      notify("error", "Please Enter Something!");
     }
 
     setTodo({
@@ -69,13 +69,34 @@ const TodoForm = ({ todos, setTodos, setStatus, status }) => {
       </form>
 
       <div className="flex items-center justify-evenly pt-3">
-        <button onClick={() => setStatus("All")} className={`${status === "All" ? 'text-[#3a7bfd] hover:text-[#3a7bfd] opacity-100' : 'text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 opacity-80'} font-medium mx-4 ease-in duration-150 text-base sm:text-lg`}>
+        <button
+          onClick={() => setStatus("All")}
+          className={`${
+            status === "All"
+              ? "text-[#3a7bfd] hover:text-[#3a7bfd] opacity-100"
+              : "text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 opacity-80"
+          } font-medium mx-4 ease-in duration-150 text-base sm:text-lg`}
+        >
           All
         </button>
-        <button onClick={() => setStatus("Complete")} className={`${status === "Complete" ? 'text-[#3a7bfd] hover:text-[#3a7bfd] opacity-100' : 'text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 opacity-80'} font-medium mx-4 ease-in duration-150 text-base sm:text-lg`} >
+        <button
+          onClick={() => setStatus("Complete")}
+          className={`${
+            status === "Complete"
+              ? "text-[#3a7bfd] hover:text-[#3a7bfd] opacity-100"
+              : "text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 opacity-80"
+          } font-medium mx-4 ease-in duration-150 text-base sm:text-lg`}
+        >
           Complete
         </button>
-        <button onClick={() => setStatus("Active")} className={`${status === "Active" ? 'text-[#3a7bfd] hover:text-[#3a7bfd] opacity-100' : 'text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 opacity-80'} font-medium mx-4 ease-in duration-150 text-base sm:text-lg`}>
+        <button
+          onClick={() => setStatus("Active")}
+          className={`${
+            status === "Active"
+              ? "text-[#3a7bfd] hover:text-[#3a7bfd] opacity-100"
+              : "text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 opacity-80"
+          } font-medium mx-4 ease-in duration-150 text-base sm:text-lg`}
+        >
           Active
         </button>
       </div>

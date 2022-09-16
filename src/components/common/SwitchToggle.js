@@ -17,7 +17,12 @@ const SwitchToggle = () => {
 
   return (
     <>
-      <DarkModeSwitch checked={darkSide} sunColor="white" onChange={toggleDarkMode} size={35} />
+      <DarkModeSwitch
+        checked={darkSide}
+        sunColor="white"
+        onChange={toggleDarkMode}
+        size={35}
+      />
     </>
   );
 };

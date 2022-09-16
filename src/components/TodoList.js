@@ -60,7 +60,7 @@ const TodoList = ({
         ) : null}
       </div>
 
-      {todos.length && onUnCompletedTodo >=0 ? (
+      {todos.length && onUnCompletedTodo >= 0 ? (
         <div className="bg-white dark:bg-[#25273c] w-full p-1 text-center border-t border-t-slate-300 dark:border-t-slate-500 shadow-hero">
           <span className="text-[17px] font-normal text-slate-600 dark:text-gray-200">
             {onUnCompletedTodo

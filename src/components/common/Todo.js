@@ -7,7 +7,7 @@ const Todo = ({ todo, onComplete, onDelete, onEdit }) => {
         todo.isComplete ? "opacity-70" : ""
       } ease-in duration-150 py-4 px-2 flex items-start justify-between border-b border-b-slate-300 dark:border-b-slate-500 last:border-none`}
     >
-      <div className="flex items-start" onClick={() => onComplete(todo)}>
+      <div className="flex items-start" onClick={() => onComplete(todo.id)}>
         <button className="text-gray-800 dark:text-white border border-gray-600 rounded-full p-1 group">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ const Todo = ({ todo, onComplete, onDelete, onEdit }) => {
           </svg>
         </button>
         <button
-          onClick={() => onDelete(todo)}
+          onClick={() => onDelete(todo.id)}
           className="text-gray-600 opacity-70 hover:opacity-100 ease-in duration-150 dark:text-gray-200 outline-none"
         >
           <svg
