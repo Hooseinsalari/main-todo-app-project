@@ -17,7 +17,7 @@ const TodoForm = ({ todos, setTodos, setStatus, status }) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    if (todo.text) {
+    if (todo.text.trim()) {
       setTodos([...todos, todo]);
     } else {
       notify("error", "Please Enter Something!");
